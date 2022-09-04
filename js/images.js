@@ -11,7 +11,7 @@ const gallery = [
 },
 {
     id: 3,
-    src: './css/images/Montblanc.jpg',
+    src: './css/images/Montblanc.png',
     alt: 'Mont Blanc'
 },
 {
