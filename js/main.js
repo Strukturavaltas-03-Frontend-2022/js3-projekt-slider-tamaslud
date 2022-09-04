@@ -50,7 +50,7 @@ const btnBoxCreation = () => {
 };
 const displayContent = (actualImageIndex) => {
     actualImageObject = gallery[actualImageIndex];
-    focusedImageHTML = `<img src="${actualImageObject.src}" alt="${actualImageObject.alt}">`
+    focusedImageHTML = `<img class="fade" src="${actualImageObject.src}" alt="${actualImageObject.alt}">`
     focusedImage.innerHTML = focusedImageHTML;
     imageDescription.innerHTML = actualImageObject.alt;
     imageCounter.innerHTML = `${actualImageIndex+1}/${imagesTotal}`;
