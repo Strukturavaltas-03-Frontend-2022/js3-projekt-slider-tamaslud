@@ -2,6 +2,10 @@ import gallery from './images.js';
 
 const imagesTotal = gallery.length;
 let actualImageIndex = 0;
+const slidingTime = 4000; //milliseconds
+const sliderHeight = '250px'; // set height of slider box
+document.querySelector('.imageBox').style.height = sliderHeight;
+
 
 const imageCounter = document.querySelector('.imageCounter');
 const focusedImage = document.querySelector('.focusedImage');
@@ -25,12 +29,12 @@ const addBtnListeners = () => {
             setActualImageIndex(index);
         })
     }
-}
+};
 
 const setActualImageIndex = (index) => {
     actualImageIndex = index;
     displayContent(actualImageIndex);
-}
+};
 
 const btnBoxCreation = () => {
     btnBoxActual = '';
@@ -44,8 +48,6 @@ const btnBoxCreation = () => {
     buttonBox.innerHTML = btnBoxActual;
     addBtnListeners();
 };
-
-
 const displayContent = (actualImageIndex) => {
     actualImageObject = gallery[actualImageIndex];
     focusedImageHTML = `<img src="${actualImageObject.src}" alt="${actualImageObject.alt}">`
@@ -53,18 +55,15 @@ const displayContent = (actualImageIndex) => {
     imageDescription.innerHTML = actualImageObject.alt;
     imageCounter.innerHTML = `${actualImageIndex+1}/${imagesTotal}`;
     btnBoxCreation();
-}
-
-
+};
 const nextImage = () => {
     actualImageIndex === (imagesTotal - 1) ? actualImageIndex = 0 : actualImageIndex ++;
     displayContent(actualImageIndex)
-    
-}
+ };
 const previousImage = () => {
     actualImageIndex === (0) ? actualImageIndex = (imagesTotal-1) : actualImageIndex --;
     displayContent(actualImageIndex)
-
-}
+};
 
 displayContent(actualImageIndex);
+setInterval(nextImage, slidingTime);
