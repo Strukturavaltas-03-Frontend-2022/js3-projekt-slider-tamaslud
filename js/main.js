@@ -14,18 +14,23 @@ const buttonBox = document.querySelector('.buttonBox');
 arrowLeft.addEventListener("click", () => previousImage());
 arrowRight.addEventListener("click", () => nextImage());
 
-
-
 let actualImageObject;
 let focusedImageHTML;
 let btnBoxActual = '';
- `
-<img class="radio" src="./css/icons/radio_button_checked_FILL0_wght400_GRAD0_opsz48.svg" alt="">
-<img class="radio" src="./css/icons/radio_button_unchecked_FILL0_wght400_GRAD0_opsz48.svg" alt="">
-<img class="radio" src="./css/icons/radio_button_unchecked_FILL0_wght400_GRAD0_opsz48.svg" alt="">
-<img class="radio" src="./css/icons/radio_button_unchecked_FILL0_wght400_GRAD0_opsz48.svg" alt="">
-<img class="radio" src="./css/icons/radio_button_unchecked_FILL0_wght400_GRAD0_opsz48.svg" alt="">
-`
+
+const addBtnListeners = () => {
+    const radioButtons = document.querySelectorAll('.radio');
+    for (let index = 0; index < radioButtons.length; index++) {
+        radioButtons[index].addEventListener("click", () => { 
+            setActualImageIndex(index);
+        })
+    }
+}
+
+const setActualImageIndex = (index) => {
+    actualImageIndex = index;
+    displayContent(actualImageIndex);
+}
 
 const btnBoxCreation = () => {
     btnBoxActual = '';
@@ -37,6 +42,7 @@ const btnBoxCreation = () => {
         }
     }
     buttonBox.innerHTML = btnBoxActual;
+    addBtnListeners();
 };
 
 
@@ -60,6 +66,5 @@ const previousImage = () => {
     displayContent(actualImageIndex)
 
 }
-
 
 displayContent(actualImageIndex);
