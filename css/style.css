@@ -26,10 +26,13 @@ h1 {
   font-size: 2em;
   text-align: center;
   text-shadow: rgba(47,198,240, 90) 0 0 5vw;
+  padding: 10px;
 }
 .imageContainer {
     border: 1px solid black;
     width: 500px;
+    box-shadow:  5px 5px 5px rgba(0,0,0,0.56);
+    border-radius: 3px;
 }
 .imageBox{
     color: beige;
@@ -53,11 +56,14 @@ img{
     font-family: Sourcecode, monospace;
 }
 .imageDescription {
+    background-color: rgba(0,50,50,10);
+    padding: 1%;
     position: absolute;
     bottom: 5%;
     left: 3%;
     font-size: 1em;
     text-align: center;
+    border-radius: 1em;
 }
 
 .arrowLeft {
@@ -84,6 +90,6 @@ img{
 }
 .radio{
     position: relative;
-    height: 30px;
-    width: 30px;
+    height: 20px;
+    width: 20px;
 }

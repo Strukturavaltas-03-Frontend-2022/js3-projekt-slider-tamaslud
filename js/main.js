@@ -1,7 +1,7 @@
 import gallery from './images.js';
 
 const imagesTotal = gallery.length;
-let actualImageIndex = 4;
+let actualImageIndex = 0;
 
 const imageCounter = document.querySelector('.imageCounter');
 const focusedImage = document.querySelector('.focusedImage');
@@ -18,8 +18,8 @@ arrowRight.addEventListener("click", () => nextImage());
 
 let actualImageObject;
 let focusedImageHTML;
-
-const btnBoxActual = `
+let btnBoxActual = '';
+ `
 <img class="radio" src="./css/icons/radio_button_checked_FILL0_wght400_GRAD0_opsz48.svg" alt="">
 <img class="radio" src="./css/icons/radio_button_unchecked_FILL0_wght400_GRAD0_opsz48.svg" alt="">
 <img class="radio" src="./css/icons/radio_button_unchecked_FILL0_wght400_GRAD0_opsz48.svg" alt="">
@@ -27,7 +27,17 @@ const btnBoxActual = `
 <img class="radio" src="./css/icons/radio_button_unchecked_FILL0_wght400_GRAD0_opsz48.svg" alt="">
 `
 
-
+const btnBoxCreation = () => {
+    btnBoxActual = '';
+    for (let index = 0; index < imagesTotal; index++) {
+        if (index === actualImageIndex) {
+            btnBoxActual += `<img class="radio radio-${index}" src="./css/icons/radio_button_checked_FILL0_wght400_GRAD0_opsz48.svg" alt="">`;
+        }else{
+            btnBoxActual += `<img class="radio radio-${index}" src="./css/icons/radio_button_unchecked_FILL0_wght400_GRAD0_opsz48.svg" alt="">`;
+        }
+    }
+    buttonBox.innerHTML = btnBoxActual;
+};
 
 
 const displayContent = (actualImageIndex) => {
@@ -36,7 +46,7 @@ const displayContent = (actualImageIndex) => {
     focusedImage.innerHTML = focusedImageHTML;
     imageDescription.innerHTML = actualImageObject.alt;
     imageCounter.innerHTML = `${actualImageIndex+1}/${imagesTotal}`;
-    buttonBox.innerHTML = btnBoxActual;
+    btnBoxCreation();
 }
 
 
