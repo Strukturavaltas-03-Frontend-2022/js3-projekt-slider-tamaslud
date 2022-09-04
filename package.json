@@ -1,0 +1,23 @@
+{
+  "name": "js3-projekt-slider-tamaslud",
+  "version": "1.0.0",
+  "description": "Egy image slider-t kell készítened JavaScript segítségével.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Strukturavaltas-03-Frontend-2022/js3-projekt-slider-tamaslud.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Strukturavaltas-03-Frontend-2022/js3-projekt-slider-tamaslud/issues"
+  },
+  "homepage": "https://github.com/Strukturavaltas-03-Frontend-2022/js3-projekt-slider-tamaslud#readme",
+  "devDependencies": {
+    "eslint": "^8.23.0"
+  }
+}
